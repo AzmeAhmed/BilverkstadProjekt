@@ -3,18 +3,18 @@ public class Vehicle {
     private String make;
     private String model;
     private int yearBuilt;
-    private double hourlyRate;
+    private double baseHourlyRate;
     private boolean isRepaired;
 
 
-    public Vehicle(String regNumber, String make, String model, int yearBuilt, double hourlyRate, boolean isRepaired) {
+    public Vehicle(String regNumber, String make, String model, int yearBuilt, double baseHourlyRate, boolean isRepaired) {
 
 
         this.regNumber = regNumber;
         this.make = make;
         this.model = model;
         this.yearBuilt = yearBuilt;
-        this.hourlyRate = hourlyRate;
+        this.baseHourlyRate = baseHourlyRate;
         this.isRepaired = isRepaired;
 
 
