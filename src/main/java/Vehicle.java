@@ -10,6 +10,10 @@ public class Vehicle {
     public Vehicle(String regNumber, String make, String model, int yearBuilt, double baseHourlyRate, boolean isRepaired) {
 
 
+        if (regNumber.isEmpty()) {
+            throw new IllegalArgumentException("Registration number cannot be empty");
+        }
+
         this.regNumber = regNumber;
         this.make = make;
         this.model = model;
