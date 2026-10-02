@@ -14,6 +14,10 @@ public class Vehicle {
             throw new IllegalArgumentException("Registration number cannot be empty");
         }
 
+        if (yearBuilt < 2000 || yearBuilt > 2026) {
+            throw new IllegalArgumentException("Manufacturing year of the Vehicles must be between 2000 and 2026");
+        }
+
         this.regNumber = regNumber;
         this.make = make;
         this.model = model;
