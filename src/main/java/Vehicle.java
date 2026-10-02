@@ -31,6 +31,7 @@ public class Vehicle {
      public String getModel() {return model;}
      public int getYearBuilt() {return yearBuilt;}
      public double getBaseHourlyRate() {return baseHourlyRate;}
+     public boolean isRepaired() {return isRepaired;}
 
 
 
