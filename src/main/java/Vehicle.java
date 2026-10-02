@@ -27,6 +27,8 @@ public class Vehicle {
 
      }
      public String getRegNumber(){return regNumber;}
+     public String getMake() {return make;}
+
 
 }
 
