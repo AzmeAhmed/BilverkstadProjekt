@@ -25,6 +25,8 @@ public class Vehicle {
         this.baseHourlyRate = baseHourlyRate;
         this.isRepaired = isRepaired;
 
+     }
+     public String getRegNumber(){return regNumber;}
 
-    }
 }
+
