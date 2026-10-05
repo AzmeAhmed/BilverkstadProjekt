@@ -7,3 +7,15 @@ public class Car extends Vehicle {
         this.isElectric = isElectric;
     }
 
+
+    @Override
+    public double calculateRepairCost(int hours) {
+        double basePrice = hours * getBaseHourlyRate();
+
+        if (isElectric) {
+            basePrice = basePrice * 1.15;
+        }
+
+        return basePrice;
+    }
+}
