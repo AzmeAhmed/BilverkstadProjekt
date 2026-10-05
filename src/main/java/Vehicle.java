@@ -33,5 +33,8 @@ public class Vehicle {
      public double getBaseHourlyRate() {return baseHourlyRate;}
      public boolean isRepaired() {return isRepaired;}
      public void setRepaired(boolean repaired) { isRepaired = repaired;}
+
+
+    public abstract double calculateRepaircost(int hours);
 }
 
