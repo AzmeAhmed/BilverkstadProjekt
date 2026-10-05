@@ -32,8 +32,6 @@ public class Vehicle {
      public int getYearBuilt() {return yearBuilt;}
      public double getBaseHourlyRate() {return baseHourlyRate;}
      public boolean isRepaired() {return isRepaired;}
-     public void setRepaired(boolean repaired) {
-        isRepaired = repaired;
-    }
+     public void setRepaired(boolean repaired) { isRepaired = repaired;}
 }
 
