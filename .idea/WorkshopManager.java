@@ -7,17 +7,29 @@ public class WorkshopManager {
         this.vehicles = new ArrayList<>();
     }
 
-    public void addVehicle(Vehicle vehicle){
+    public void addVehicle(Vehicle vehicle) {
         vehicles.add(vehicle);
     }
 
-    public Vehicle findvehicle(String regNumber){
-        for(Vehicle vehicle : vehicles ) {
-            if (vehicle.getRegNumber().equals(regNumber)){
+
+    public Vehicle findvehicle(String regNumber) {
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle.getRegNumber().equals(regNumber)) {
                 return vehicle;
             }
         }
+
         return null;
-}
+    }
+
+    public ArrayList<Vehicle> getAllVehicles() {
+        return vehicles;
+    }
+
+
+
+
+
+
 
 
