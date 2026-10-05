@@ -26,6 +26,16 @@ public class WorkshopManager {
         return vehicles;
     }
 
+    public double calculateTotalRepairCost() {
+        double total = 0;
+        for (Vehicle vehicle : vehicles) {
+            total += vehicle.calculateTotalRepairCost();
+
+            return total;
+        }
+    }
+}
+
 
 
 
