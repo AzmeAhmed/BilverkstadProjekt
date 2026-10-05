@@ -35,6 +35,6 @@ public class Vehicle {
      public void setRepaired(boolean repaired) { isRepaired = repaired;}
 
 
-    public abstract double calculateRepaircost(int hours);
+    public abstract double calculateRepairCost(int hours);
 }
 
