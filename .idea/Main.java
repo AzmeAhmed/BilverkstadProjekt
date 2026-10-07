@@ -13,7 +13,7 @@ public class Main {
             System.out.println("4. Visa statistik (Totalkostnad)");
             System.out.println("5. Avsluta");
             System.out.println("Välj ett alternativ (1-5):");
-        }
+
 
             try {
                 int choice = scanner.nextInt();
