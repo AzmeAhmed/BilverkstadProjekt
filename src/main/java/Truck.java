@@ -6,4 +6,15 @@ public class Truck extends Vehicle {
         super(regNumber, make, model, yearBuilt, baseHourlyRate, isRepaired);
         this.maxLoad = maxLoad;
     }
+
+    @Override
+    public double calculateRepairCost(int hours) {
+        double basePrice = hours * getBaseHourlyRate();
+
+        double totalPrice = basePrice + (this.maxLoad * 500);
+
+        return totalPrice;
+
+
+    }
 }
