@@ -18,11 +18,21 @@ public class Main {
             try {
                 int choice = scanner.nextInt();
                 scanner.nextLine();
-            }catch (InputMismatchException e){
+            }catch (InputMismatchException e) {
                 System.out.println("Fel! Skriv en siffra");
                 scanner.next();
                 continue;
+            }
 
+                switch (choice){
+                    case 5:
+                        running = false;
+                        System.out.println("programmet avslutas");
+                        break;
+                    default:
+                        System.out.println("felaktigt val");
+                        break;
+                }
             }
 
         }
