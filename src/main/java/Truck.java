@@ -1,4 +1,4 @@
-public class Truck extends Vehicle {
+public abstract class Truck extends Vehicle {
 
     private int maxLoad;
 
@@ -9,12 +9,12 @@ public class Truck extends Vehicle {
 
     @Override
     public double calculateRepairCost(int hours) {
+        // Calculate initial cost based on hours and the base hourly rate
         double basePrice = hours * getBaseHourlyRate();
 
+        // Add an extra flat fee of 500 kr per ton based on max load capacity
         double totalPrice = basePrice + (this.maxLoad * 500);
 
         return totalPrice;
-
-
     }
 }
