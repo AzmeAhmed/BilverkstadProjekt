@@ -51,6 +51,24 @@ public class Main {
                         System.out.println("sparat");
                         break;
 
+                    case 2:
+                        for (Vehicle vehicle: manager.getAllVehicles()){
+                            System.out.println(vehicle);
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Reg nr: ");
+                        Vehicle found = manager.findVehicle(scanner.nextLine());
+                        if (found != null) {
+                            System.out.println("Kostnad: " + found.calculateRepairCost() + "kr");
+                        }else {
+                            System.out.println("Hittades inte");
+                        }
+                        break;
+
+                    }
+
+
                     case 5:
                         running = false;
                         System.out.println("programmet avslutas");

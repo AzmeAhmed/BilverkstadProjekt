@@ -12,7 +12,7 @@ public class WorkshopManager {
     }
 
 
-    public Vehicle findvehicle(String regNumber) {
+    public Vehicle findVehicle(String regNumber) {
         for (Vehicle vehicle : vehicles) {
             if (vehicle.getRegNumber().equals(regNumber)) {
                 return vehicle;
