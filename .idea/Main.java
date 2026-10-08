@@ -14,9 +14,10 @@ public class Main {
             System.out.println("5. Avsluta");
             System.out.println("Välj ett alternativ (1-5):");
 
+            int choice = 0;
 
             try {
-                int choice = scanner.nextInt();
+                 choice = scanner.nextInt();
                 scanner.nextLine();
             }catch (InputMismatchException e) {
                 System.out.println("Fel! Skriv en siffra");
@@ -25,6 +26,18 @@ public class Main {
             }
 
                 switch (choice){
+                    case 1:
+                        System.out.println("1. Bil | 2.Lastbil | 3.MC : ");
+                        int type = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Reg nr");
+                        String reg=scanner.nextLine();
+                        System.out.println("Märke");
+                        String brand= scanner.nextLine();
+
+                        
+                        }
+
                     case 5:
                         running = false;
                         System.out.println("programmet avslutas");
@@ -37,7 +50,7 @@ public class Main {
 
         }
     }
-}
+
 
 
 
