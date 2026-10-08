@@ -1,20 +1,21 @@
-public abstract class Truck extends Vehicle {
+// Concrete subclass demonstrating Method Overriding and Inheritance
+public class Truck extends Vehicle implements Serviceable {
+    private int maxLoad; // Subclass-specific field
 
-    private int maxLoad;
-
-    public Truck(String regNumber, String make, String model, int yearBuilt, double baseHourlyRate, boolean isRepaired, boolean isElectric, int maxLoad) {
+    public Truck(String regNumber, String make, String model, int yearBuilt, double baseHourlyRate, boolean isRepaired, int maxLoad) {
         super(regNumber, make, model, yearBuilt, baseHourlyRate, isRepaired);
         this.maxLoad = maxLoad;
     }
 
+    // Method Overriding: Specialized calculation based on vehicle type criteria
     @Override
     public double calculateRepairCost(int hours) {
-        // Calculate initial cost based on hours and the base hourly rate
         double basePrice = hours * getBaseHourlyRate();
+        return basePrice + (this.maxLoad * 500);
+    }
 
-        // Add an extra flat fee of 500 kr per ton based on max load capacity
-        double totalPrice = basePrice + (this.maxLoad * 500);
-
-        return totalPrice;
+    @Override
+    public void performDiagnostic() {
+        System.out.println("Kontrollerar hydrauliksystem och tunga mekaniska komponenter på lastbilen...");
     }
 }
