@@ -9,11 +9,8 @@ public class Car extends Vehicle {
 
     @Override
     public double calculateRepairCost(int hours) {
-        // Calculate initial cost using the base hourly rate from the parent class
         double basePrice = hours * getBaseHourlyRate();
 
-
-        // Apply a 15% electric vehicle premium if applicable
         if (isElectric) {
             basePrice = basePrice * 1.15;
         }
