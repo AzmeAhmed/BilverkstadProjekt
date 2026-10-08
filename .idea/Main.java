@@ -25,18 +25,31 @@ public class Main {
                 continue;
             }
 
-                switch (choice){
+                switch (choice) {
                     case 1:
                         System.out.println("1. Bil | 2.Lastbil | 3.MC : ");
                         int type = scanner.nextInt();
                         scanner.nextLine();
                         System.out.println("Reg nr");
-                        String reg=scanner.nextLine();
+                        String reg = scanner.nextLine();
                         System.out.println("Märke");
-                        String brand= scanner.nextLine();
+                        String brand = scanner.nextLine();
 
-                        
+
+                        if (type ==1){
+                            System.out.println("Dörrar: ");
+                            manager.addVehicle(new Car(reg,brand, scanner.nextInt()));
+                        }else if(type == 2){
+                            System.out.println("Max lastvikt: ");
+                            manager.addVehicle(new Truck(reg,brand, scanner.nextDouble()));
+
+                        }else if (type == 3) {
+                            System.out.println("Sidovagn (Sant/Falskt: )");
+                            manager.addVehicle(new Motorcycle(reg, brand, scanner.nextBoolean()));
                         }
+                        scanner.nextLine();
+                        System.out.println("sparat");
+                        break;
 
                     case 5:
                         running = false;
@@ -50,6 +63,7 @@ public class Main {
 
         }
     }
+
 
 
 
