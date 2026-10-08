@@ -1,4 +1,4 @@
-public  abstract class Vehicle {
+public class Vehicle {
     private String regNumber;
     private String make;
     private String model;
@@ -33,8 +33,5 @@ public  abstract class Vehicle {
      public double getBaseHourlyRate() {return baseHourlyRate;}
      public boolean isRepaired() {return isRepaired;}
      public void setRepaired(boolean repaired) { isRepaired = repaired;}
-
-
-    public abstract double calculateRepairCost(int hours);
 }
 
