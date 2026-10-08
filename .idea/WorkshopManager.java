@@ -30,7 +30,7 @@ public class WorkshopManager {
         double total = 0;
 
         for (Vehicle vehicle : vehicles) {
-            total += vehicle.calculateTotalRepairCost();
+            total += vehicle.calculateRepairCost();
             }
 
             return total;
