@@ -65,6 +65,9 @@ public class Main {
                             System.out.println("Hittades inte");
                         }
                         break;
+                    case 4:
+                    System.out.println("Totalkostnad" + manager.calculateTotalRepairCost() + "kr");
+                    break;
 
                     }
 
@@ -80,7 +83,7 @@ public class Main {
             }
 
         }
-    }
+
 
 
 
