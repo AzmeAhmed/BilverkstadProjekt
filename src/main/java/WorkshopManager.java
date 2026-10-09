@@ -28,10 +28,10 @@ public class WorkshopManager {
     }
 
     // Dynamic Method Invocation: Polymorphically calling the correct subclass calculation method
-    public double calculateTotalRepairCost() {
+    public double calculateTotalRepairCost(int hours) {
         double total = 0;
         for (Vehicle vehicle : vehicles) {
-            total += vehicle.calculateRepairCost(2); // Using 2 hours as a standard metric calculation
+            total += vehicle.calculateRepairCost(hours);
         }
         return total;
     }
