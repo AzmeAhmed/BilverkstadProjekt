@@ -32,47 +32,59 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Välj typ (1. Bil | 2. Lastbil | 3. MC): ");
-                    int type = scanner.nextInt();
-                    scanner.nextLine();
+                    try {
+                        System.out.print("Välj typ (1. Bil | 2. Lastbil | 3. MC): ");
+                        int type = scanner.nextInt();
+                        scanner.nextLine();
 
-                    System.out.print("Registreringsnummer: ");
-                    String reg = scanner.nextLine();
-                    System.out.print("Märke: ");
-                    String brand = scanner.nextLine();
-                    System.out.print("Modell: ");
-                    String model = scanner.nextLine();
-                    System.out.print("Tillverkningsår (2000-2026): ");
-                    int year = scanner.nextInt();
-                    System.out.print("Timpris (double): ");
-                    double rate = scanner.nextDouble();
-                    scanner.nextLine();
+                        System.out.print("Registreringsnummer: ");
+                        String reg = scanner.nextLine();
+                        System.out.print("Märke: ");
+                        String brand = scanner.nextLine();
+                        System.out.print("Modell: ");
+                        String model = scanner.nextLine();
+                        System.out.print("Tillverkningsår (2000-2026): ");
+                        int year = scanner.nextInt();
+                        System.out.print("Timpris (double): ");
+                        double rate = scanner.nextDouble();
+                        scanner.nextLine();
 
-                    // Instantiating specific objects using matching variables
-                    if (type == 1) {
-                        System.out.print("Är det en elbil? (true/false): ");
-                        boolean isElectric = scanner.nextBoolean();
-                        manager.addVehicle(new Car(reg, brand, model, year, rate, false, isElectric));
-                    } else if (type == 2) {
-                        System.out.print("Max lastvikt (kg): ");
-                        int maxLoad = scanner.nextInt();
-                        manager.addVehicle(new Truck(reg, brand, model, year, rate, false, maxLoad));
-                    } else if (type == 3) {
-                        System.out.print("Motorstorlek (cc): ");
-                        int cc = scanner.nextInt();
-                        manager.addVehicle(new Motorcycle(reg, brand, model, year, rate, false, cc));
+                        // Instantiating specific objects using matching variables
+                        if (type == 1) {
+                            System.out.print("Är det en elbil? (true/false): ");
+                            boolean isElectric = scanner.nextBoolean();
+                            scanner.nextLine();
+                            manager.addVehicle(new Car(reg, brand, model, year, rate, false, isElectric));
+                            System.out.println("Bilen har sparats framgångsrikt!");
+                        } else if (type == 2) {
+                            System.out.print("Max lastvikt (kg): ");
+                            int maxLoad = scanner.nextInt();
+                            scanner.nextLine();
+                            manager.addVehicle(new Truck(reg, brand, model, year, rate, false, maxLoad));
+                            System.out.println("Lastbilen har sparats framgångsrikt!");
+                        } else if (type == 3) {
+                            System.out.print("Motorstorlek (cc): ");
+                            int cc = scanner.nextInt();
+                            scanner.nextLine();
+                            manager.addVehicle(new Motorcycle(reg, brand, model, year, rate, false, cc));
+                            System.out.println("Motorcykeln har sparats framgångsrikt!");
+                        } else {
+                            System.out.println("Ogiltig typ vald. Inget fordon lades till.");
+                        }
+                    } catch (InputMismatchException e) {
+                        System.out.println("Felaktig inmatning vid registrering! Använd siffror för år/pris/lastvikt/cc.");
+                        scanner.nextLine();
                     }
-                    scanner.nextLine();
-                    System.out.println("Fordonet har sparats framgångsrikt!");
                     break;
 
                 case 2:
                     System.out.println("\n--- Alla fordon i verkstaden ---");
                     if (manager.getAllVehicles().isEmpty()) {
                         System.out.println("Inga fordon inlämnade.");
-                    }
-                    for (Vehicle vehicle : manager.getAllVehicles()) {
-                        System.out.println("Regnr: " + vehicle.getRegNumber() + " | " + vehicle.getMake() + " " + vehicle.getModel());
+                    } else {
+                        for (Vehicle vehicle : manager.getAllVehicles()) {
+                            System.out.println("Regnr: " + vehicle.getRegNumber() + " | " + vehicle.getMake() + " " + vehicle.getModel());
+                        }
                     }
                     break;
 
@@ -91,7 +103,10 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("Total beräknad kostnad för alla fordon: " + manager.calculateTotalRepairCost() + " kr");
+                    System.out.print("Ange antal timmar för totalkostnadsberäkning: ");
+                    int totalHours = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Total beräknad kostnad för alla fordon (" + totalHours + " timmar): " + manager.calculateTotalRepairCost(totalHours) + " kr");
                     break;
 
                 case 5:
