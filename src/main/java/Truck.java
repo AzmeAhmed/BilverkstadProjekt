@@ -11,7 +11,11 @@ public class Truck extends Vehicle implements Serviceable {
     @Override
     public double calculateRepairCost(int hours) {
         double basePrice = hours * getBaseHourlyRate();
-        return basePrice + (this.maxLoad * 500);
+        if (this.maxLoad > 1000) {
+            return basePrice + 500; // Adds a fixed 500 SEK surcharge for trucks
+        }
+
+        return basePrice;
     }
 
     @Override
