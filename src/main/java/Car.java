@@ -13,7 +13,7 @@ public class Car extends Vehicle implements Serviceable {
     public double calculateRepairCost(int hours) {
         double basePrice = hours * getBaseHourlyRate();
         if (isElectric) {
-            basePrice = basePrice * 1.15; // 15% electric vehicle surcharge
+            basePrice = basePrice * 1.50; // 50% electric vehicle surcharge
         }
         return basePrice;
     }
