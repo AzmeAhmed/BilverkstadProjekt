@@ -14,7 +14,7 @@ public class WorkshopManager {
     }
 
     // Linear search utility using object identification fields
-    public Vehicle findVehicle(String regNumber) {
+    public Vehicle findVehicle(String regNumber) {// Searches for a vehicle by registration number.
         for (Vehicle vehicle : vehicles) {
             if (vehicle.getRegNumber().equalsIgnoreCase(regNumber)) {
                 return vehicle;
