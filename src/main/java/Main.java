@@ -50,6 +50,8 @@ public class Main {
                         scanner.nextLine();
 
                         // Instantiating specific objects using matching variables
+
+                        try {
                         if (type == 1) {
                             System.out.print("Är det en elbil? (true/false): ");
                             boolean isElectric = scanner.nextBoolean();
@@ -70,6 +72,9 @@ public class Main {
                             System.out.println("Motorcykeln har sparats framgångsrikt!");
                         } else {
                             System.out.println("Ogiltig typ vald. Inget fordon lades till.");
+                        }
+                        } catch (IllegalArgumentException e) {
+                            System.out.println("Felaktig inmatning: " + e.getMessage());
                         }
                     } catch (InputMismatchException e) {
                         System.out.println("Felaktig inmatning vid registrering! Använd siffror för år/pris/lastvikt/cc.");

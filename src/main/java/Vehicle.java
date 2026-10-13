@@ -11,10 +11,10 @@ public abstract class Vehicle {
     // Constructor with built-in validation checks (Data validation logic)
     public Vehicle(String regNumber, String make, String model, int yearBuilt, double baseHourlyRate, boolean isRepaired) {
         if (regNumber == null || regNumber.isEmpty()) {
-            throw new IllegalArgumentException("Registration number cannot be empty.");
+            throw new IllegalArgumentException("Registreringsnummer får inte vara tomt.");
         }
         if (yearBuilt < 2000 || yearBuilt > 2026) {
-            throw new IllegalArgumentException("Manufacturing year must be between 2000 and 2026.");
+            throw new IllegalArgumentException("Tillverkningsår måste vara mellan 2000 och 2026.");
         }
         this.regNumber = regNumber;
         this.make = make;
